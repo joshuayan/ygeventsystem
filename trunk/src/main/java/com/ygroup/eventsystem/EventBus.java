@@ -10,7 +10,7 @@ package com.ygroup.eventsystem;
  */
 public interface EventBus
 {
-    void publishEvent(Object event);
+    void publishEvent(Object event)  throws Exception;
 
     void destroy();
 }

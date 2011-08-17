@@ -4,7 +4,7 @@
  */
 package com.ylhome.eventsystem;
 
-import com.ygroup.eventsystem.annotation.EventHandler;
+import com.ygroup.eventsystem.annotation.EventHandle;
 
 /**
  *
@@ -12,7 +12,7 @@ import com.ygroup.eventsystem.annotation.EventHandler;
  */
 public class TestHandler
 {
-    @EventHandler
+    @EventHandle
     public void testEvent(TestEvent event)
     {
         System.out.println("Testhandler," + event.getMessage());

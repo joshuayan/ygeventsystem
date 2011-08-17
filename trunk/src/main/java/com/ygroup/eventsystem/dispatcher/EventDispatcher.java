@@ -10,7 +10,7 @@ package com.ygroup.eventsystem.dispatcher;
  */
 public interface EventDispatcher
 {
-    void dispatchEvent(Object event);
+    void dispatchEvent(Object event)  throws Exception;
 
     void destroy();
 }

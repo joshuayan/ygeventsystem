@@ -13,7 +13,7 @@ import org.slf4j.LoggerFactory;
  *
  * @author joshua
  */
-public class EventTask implements Runnable
+public class EventTask
 {
     final private static Logger logger = LoggerFactory.getLogger(EventTask.class);
     private Object instance;
@@ -42,8 +42,7 @@ public class EventTask implements Runnable
         return instance;
     }
 
-    @Override
-    public void run()
+    public void run() throws Exception
     {
         try
         {
@@ -53,12 +52,15 @@ public class EventTask implements Runnable
         } catch (IllegalAccessException ex)
         {
             logger.warn(ex.getMessage());
+            throw ex;
         } catch (IllegalArgumentException ex)
         {
             logger.warn(ex.getMessage());
+            throw ex;
         } catch (InvocationTargetException ex)
         {
             logger.warn(ex.getMessage());
+            throw ex;
         }
     }
 }
