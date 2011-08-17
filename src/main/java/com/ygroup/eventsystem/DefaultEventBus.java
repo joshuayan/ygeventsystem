@@ -20,7 +20,7 @@ public class DefaultEventBus implements EventBus
     }
 
     @Override
-    public void publishEvent(Object event)
+    public void publishEvent(Object event)  throws Exception
     {
         this.eventDispatcher.dispatchEvent(event);
     }

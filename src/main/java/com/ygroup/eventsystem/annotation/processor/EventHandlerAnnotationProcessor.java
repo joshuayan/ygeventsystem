@@ -4,7 +4,7 @@
  */
 package com.ygroup.eventsystem.annotation.processor;
 
-import com.ygroup.eventsystem.annotation.EventHandler;
+import com.ygroup.eventsystem.annotation.EventHandle;
 import java.lang.reflect.Method;
 import java.util.ArrayList;
 import java.util.List;
@@ -30,7 +30,7 @@ public class EventHandlerAnnotationProcessor
             List<Method> candidateMethods = new ArrayList<Method>();
             for (Method method : methods)
             {
-                if (method.isAnnotationPresent(EventHandler.class) && method.getParameterTypes().length == 1)
+                if (method.isAnnotationPresent(EventHandle.class) && method.getParameterTypes().length == 1)
                 {
                     logger.info("add candidate method {}", method.getName());
                     candidateMethods.add(method);
@@ -40,7 +40,7 @@ public class EventHandlerAnnotationProcessor
             List<EventHandlerInfo> handlerInfos = new ArrayList<EventHandlerInfo>();
             for (Method method : candidateMethods)
             {
-                EventHandler handler = method.getAnnotation(EventHandler.class);
+                EventHandle handler = method.getAnnotation(EventHandle.class);
                 Class[] parameterTypes = method.getParameterTypes();
                 if (parameterTypes.length == 1)
                 {

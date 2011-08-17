@@ -36,7 +36,7 @@ public class DefaultEventDispatcher implements EventDispatcher
     }
 
     @Override
-    public void dispatchEvent(Object event)
+    public void dispatchEvent(Object event) throws Exception
     {
         if (event != null)
         {
@@ -48,7 +48,7 @@ public class DefaultEventDispatcher implements EventDispatcher
         }
     }
 
-    private void dispatchEvent(Object event, EventHandlerInfo handlerInfo)
+    private void dispatchEvent(Object event, EventHandlerInfo handlerInfo) throws Exception
     {
         EventTask task = new EventTask(handlerInfo.getInstance(), handlerInfo.getMethod(), event);
         if (handlerInfo.isAsync())

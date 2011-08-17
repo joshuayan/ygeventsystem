@@ -16,7 +16,7 @@ public class SyncEventTaskExecutor implements EventTaskExecutor
     final private static Logger logger = LoggerFactory.getLogger(SyncEventTaskExecutor.class);
 
     @Override
-    public void execute(EventTask task)
+    public void execute(EventTask task) throws Exception
     {
         logger.info("executing sync task");
         task.run();

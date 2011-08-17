@@ -10,7 +10,7 @@ package com.ygroup.eventsystem.executor;
  */
 public interface EventTaskExecutor
 {
-    void execute(EventTask task);
+    void execute(EventTask task) throws Exception;
 
     void destroy();
 }
